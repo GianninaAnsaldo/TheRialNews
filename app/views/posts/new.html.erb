@@ -1,0 +1,13 @@
+<% content_for :title, "New Post" %>
+
+<h1 class="my-5 text-center">Crear Nuevo Post</h1>
+
+<div class="card mx-auto" style="max-width: 600px;">
+  <div class="card-body">
+    <%= render "form", post: @post %>
+  </div>
+</div>
+
+<div class="text-center mt-4">
+  <%= link_to "Volver a los posts", posts_path, class: "btn btn-secondary" %>
+</div>

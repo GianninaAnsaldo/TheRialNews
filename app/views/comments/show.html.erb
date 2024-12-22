@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @comment %>
+
+<div class="mt-3">
+  <% if user_signed_in? && current_user.registrado? %>
+    <%= link_to "Edit this comment", edit_comment_path(@comment), class: "btn btn-primary" %> 
+  <% end %>
+
+  <%= link_to "Back to comments", comments_path, class: "btn btn-secondary" %>
+
+  <% if current_user&.admin? %>
+    <%= button_to "Destroy this comment", @comment, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <% end %>
+</div>

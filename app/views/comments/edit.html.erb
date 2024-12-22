@@ -1,0 +1,12 @@
+<% content_for :title, "Editing comment" %>
+
+<h1>Editar comentario</h1>
+
+<div class="container">
+  <%= render "form", comment: @comment %>
+</div>
+
+<div class="mt-3">
+  <%= link_to "Detalles del comentario", @comment, class: "btn btn-secondary" %> 
+  <%= link_to "Volver a comentarios", comments_path, class: "btn btn-primary" %>
+</div>

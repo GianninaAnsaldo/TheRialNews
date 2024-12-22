@@ -1,0 +1,38 @@
+<% content_for :title, "Posts" %>
+
+<h1 class="my-5 text-center">Noticias</h1>
+
+<% if user_signed_in? %>
+  <div class="mb-5 d-flex justify-content-start my-2">
+    <%= link_to "Crear nuevo post", new_post_path, class: "btn btn-success" %>
+  </div>
+<% end %>
+
+<% if notice %>
+  <div class="alert alert-success text-center">
+    <%= notice %>
+  </div>
+<% end %>
+
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <%= image_tag post.image, class: "card-img-top img-fluid", style: "max-height: 200px; object-fit: cover;" %> 
+        <div class="card-body">
+          <h5 class="card-title text-center"><%= post.title %></h5>
+          <p class="card-text"><%= truncate(post.description, length: 100) %></p> 
+        </div>
+        <div class="card-footer text-center">
+          <%= link_to "Ver este post", post_path(post), class: "btn btn-primary btn-sm" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% if user_signed_in? %>
+  <div class="mb-5 d-flex justify-content-end my-2">
+    <%= link_to "Crear nuevo post", new_post_path, class: "btn btn-success" %>
+  </div>
+<% end %>

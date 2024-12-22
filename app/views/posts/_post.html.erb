@@ -1,0 +1,21 @@
+<div id="<%= dom_id post %>" class="card my-5">
+  <div class="card-header">
+    <h5 class="card-title"><%= post.title %></h5>
+  </div>
+  <div class="card-body">
+      <div class="mb-3">
+        <strong>Image:</strong>
+        <%= post.image %>
+      </div>
+
+    <div class="mb-3">
+      <strong>Description:</strong>
+      <p><%= post.description %></p>
+    </div>
+
+    <div class="mb-3">
+      <strong>Usuario:</strong>
+      <p><%= post.user.name %></p>
+    </div>
+  </div>
+</div>
